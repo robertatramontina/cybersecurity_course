@@ -1,0 +1,8 @@
+flowchart TD
+    A([Início]) --> B[Ler A]
+    B --> C[Ler B]
+    C --> E{A >= B?}
+    E -- Sim --> F[Mostrar A]
+    E -- Não --> G[Mostrar B]
+    F --> H([Fim])
+    G --> H([Fim])

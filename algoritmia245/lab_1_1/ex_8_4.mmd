@@ -1,0 +1,10 @@
+flowchart
+A([Início]) --> B[/Ler €/]
+B --> C[/Qtd/]
+C --> D[/Taxa_Imposto/]
+D --> E[V_Compra <- € * Qtd]
+E --> F[V_Imposto <- V_Compra * Imposto]
+F --> G[Montante_com_Imposto <- V_compra + V_imposto]
+G --> H[/Mostrar Valor_Compra/]
+H --> I[/Mostrar Montante_com_Imposto/]
+I --> J([Fim])

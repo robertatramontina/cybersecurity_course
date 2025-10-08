@@ -1,0 +1,7 @@
+flowchart TD
+    A([Início]) --> B[Ler a idade do utilizador]
+    B --> C{Tem 18 anos ou mais?}
+    C -- Sim --> D[Acesso autorizado]
+    C -- Não --> E[Acesso não autorizado]
+    D --> F([Fim])
+    E --> F([Fim])

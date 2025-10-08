@@ -1,0 +1,10 @@
+flowchart TD
+    A([Início]) --> B[Ler Idade]
+    B --> C{Idade > 65?}
+    C -- Sim --> D[Sénior]    
+    C -- Não --> E{Idade < 18?}
+    E -- Sim --> F[Menor] 
+    E -- Não --> G[Maior]
+    D --> H([Fim])
+    F --> H([Fim])
+    G --> H([Fim])

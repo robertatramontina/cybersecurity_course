@@ -1,0 +1,11 @@
+flowchart TD
+    A([Início]) --> B[/Ler N/]
+    B --> C{N >= 10?}
+    C -- Sim --> D[/N^2/]    
+    C -- Não --> E{N >= 5}
+    E -- Sim --> F[/N^3/] 
+    E -- Não --> G[/N * 2/]
+    D --> H([Fim])
+    F --> H([Fim])
+    G --> H([Fim])
+    

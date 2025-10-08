@@ -1,0 +1,11 @@
+flowchart
+A([Início]) --> B[/Ler Língua/]
+B --> C{Língua EN?}
+C -- Sim --> D[/I like quinces/]
+C -- Não --> E{Língua DE?}
+E -- Sim --> F[/I mag Quitten/]
+F -- Não --> G[/Ooopsss.../]
+
+D --> H([Fim])
+F --> H([Fim])
+G --> H([Fim])

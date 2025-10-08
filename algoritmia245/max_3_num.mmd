@@ -1,0 +1,12 @@
+flowchart TD
+    A([Início]) --> B[Ler A]
+    B --> C[Ler B]
+    C --> D[Ler C]
+    D --> E{A > B e A > C}
+    E -- Sim --> G[Mostrar A]    
+    E -- Não --> F{B > C}
+    F -- Sim --> H[Mostrar B] 
+    H -- Não --> I[Mostrar C]
+    G --> J([Fim])
+    H --> J([Fim])
+    I --> J([Fim])

@@ -1,0 +1,12 @@
+flowchart
+A([Início]) --> B[/Ler Trânsito/]
+B --> C{Elevado?}
+C -- Sim --> D[/Ler hora/]
+C -- Não --> E[/Seguir pela N2/]
+D --> F{10h <= hora <= 12h ou 14h <= hora <= 16h}
+F -- Sim --> G[/Seguir pela CC1/]
+F -- Não --> H[/Seguir pela N1/]
+
+E --> I([Fim])
+G --> I([Fim])
+H --> I([Fim])

@@ -1,0 +1,15 @@
+flowchart TD
+    A([Início]) --> B[/Ler N1/]
+    B --> C[/Ler N2/]
+    C --> D[/Ler N3/]
+
+    D --> E{N1 >= N3 e N2 >= N3?}
+    E -- Sim --> F[/N1 + N2/]
+    E -- Não --> G{N1 >= N2}
+    G -- Sim --> H[/N1 + N3/]
+    G -- Não --> I[/N2 + N3/]
+
+    F --> J([Fim]) 
+    H --> J([Fim])
+    I --> J([Fim])
+
