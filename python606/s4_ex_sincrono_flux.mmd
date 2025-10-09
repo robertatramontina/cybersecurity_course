@@ -1,0 +1,11 @@
+flowchart TD
+    A([Início]) --> B[/Ler idade1/]
+    B --> C[/Ler idade2/]
+    C --> D{idade1 >= 18 e idade2 >= 18?}
+    D -- Sim --> E[/Acesso autorizado a ambos utilizadores/]
+    D -- Não --> F{idade1 >= 18 or idade2 >=18}
+    F -- Sim --> G[/Acesso autorizado a apenas um utilizador/]
+    F -- Não --> H[/Acesso negado a ambos utilizadores/]
+    E --> I([Fim])
+    G --> I([Fim])
+    H --> I([Fim])

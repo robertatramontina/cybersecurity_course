@@ -1,0 +1,10 @@
+flowchart TD
+    A([Início]) --> B[ler max_tentativas <- 5]
+    B --> C[/receber n_tentativas/]
+    C --> D{n_tentativas >= max_tenativas?}
+    D -- Sim --> E[/Conta Bloqueada/]
+    D -- Não --> F[restantes <- max_tentativas - n_tentativas]
+    F --> G[/Mostrar restantes/]
+    E --> H([Fim])
+    G --> H([Fim])
+    
