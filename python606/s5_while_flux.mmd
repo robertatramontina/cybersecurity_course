@@ -1,0 +1,18 @@
+flowchart TD
+A([Início]) --> B[Ler max_tentativas]
+B --> C[Ler tentativas]
+C --> D[Ler hash_admin]
+
+D --> E{tentativas < max_tentativas?}
+E -- Sim --> F[/Ler utilizador/]
+F --> G[/Ler password/]
+G --> H[/Ler hash_input/]
+E -- Não --> M[/Conta Bloqueada/] --> L([Fim])
+
+H --> I{utilizador == admin e hashinput == hash_admin?}
+I -- Sim --> J[/Acesso permitido/]
+J --> K[Sair do ciclo] --> L([Fim])
+I --> N[tentativas += tentativas]
+N --> O[restantes <- max_tentativas - tentativas]
+O --> P[/Escrever tentativas restantes/] --> E
+

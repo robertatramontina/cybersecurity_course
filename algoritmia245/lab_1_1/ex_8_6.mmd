@@ -1,0 +1,23 @@
+%% Vamos "refinar" o processo de reparação do candeeiro. Agora, após substituição da lâmpada, o
+%% candeeiro é ligado e verifcamos novamente se dá luz. Se der luz, o processo termina
+%% imediatamente. Se não der, desligamos o candeeiro e passamos para a reparação das outras
+%% partes. 
+%% Após esta última reparação, o candeeiro é ligado e verifcamos se dá luz. Se der, o processo
+%% termina. Se não der, atiramos com raiva o candeeiro pela janela fora e o processo termina.
+
+ flowchart TD
+ A([Início]) --> B{Candeeiro dá luz?}
+ B -- Sim --> C([Fim])
+ B -- Não --> D{Candeeiro ligado?}
+ 
+ D -- Sim --> E[Desligar candeeiro]
+ D -- Não --> F[Ligar candeeiro]
+ F --> G{Candeeiro dá luz?}
+ G -- Sim --> C([Fim])
+ G -- Não --> I[Desligar candeeiro]
+ I --> K{Lâmpada fundida?}
+ K -- Sim --> L[Substituir lâmpada]
+ K -- Não --> M[Reparar candeeiro]
+ E --> K{Lâmpada fundida?}
+ L --> C([Fim])
+ M --> C([Fim])

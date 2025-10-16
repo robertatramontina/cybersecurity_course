@@ -1,0 +1,24 @@
+%% Considere o processo para efectuar uma operação aritmética entre dois números. São lidos os
+%% dois números e um código de operação. O código de operação é um de 'add', 'sub', 'mul' ou
+%% 'div'. Outro texto representa uma situação de erro e deve levar a nova entrada do código de
+%% operação. Caso o código de operação seja válido, o processo exibe o resultado da operação
+%% correspondente ('add'=> +, 'sub' => -, etc.)
+
+flowchart TD
+A([Início]) --> B[/Ler N1/]
+B --> C[/Ler N2/]
+C --> D[/Ler operação add, sub, mul, div/]
+
+D --> E{Operação válida?}
+
+E -- Não --> F[/Erro/] --> D
+E -- Sim --> G{Operação == add?}
+
+G -- Sim --> H[res = N1 + N2] --> N[/Mostrar resultado/]
+G -- Não --> I{Operação == sub?}
+I -- Sim --> J[res = N1 - N2] --> N[/Mostrar resultado/]
+I -- Não --> K{Operação == mul?}
+K -- Sim --> L[res = N1 * N2] --> N[/Mostrar resultado/]
+K -- Não --> M[res = N1 / N2] --> N[/Mostrar resultado/]
+
+N --> O([Fim])

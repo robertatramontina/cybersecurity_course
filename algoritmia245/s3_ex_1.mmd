@@ -1,0 +1,13 @@
+flowchart TD
+A([Início]) --> B[/Ler N/]
+B --> C{N >=0?}
+C -- Não --> D[/Erro/] --> G([Fim])
+C --> D[Soma <-- 0]
+D --> E[i <-- 0]
+    
+F -- Não --> I[/Mostrar Soma/] --> G
+
+    I --> J[/Ler Num/]
+    J --> K[Soma += Num]
+    K --> L[i += 1] --> E
+    

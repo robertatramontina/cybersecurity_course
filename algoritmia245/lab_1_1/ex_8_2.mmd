@@ -1,3 +1,12 @@
+
+%%Vamos descrever o processo de selecção do caminho a tomar entre as localidades de Senhor
+%% Furtado (SF) e Cima da Banheira (CB). Estas duas localidades são ligadas apenas por duas
+%% estradas, N1 e N2. Ou seja, não há outro caminho possível entre SF e CB. O processo é o
+%% seguinte: é obtido/lido o estado do trânsito e caso este seja 'Elevado', então a estrada a seguir
+%% é N1, caso seja 'Baixo', então o caminho é por N2. Considere que o estado do trânsito assume
+%% estes dois valores apenas. Repare que o caminho (ie, a estrada a seguir)  é um parâmetro de
+%% saída do processo.
+
 flowchart
 A([Início]) --> B[/Ler Trânsito/]
 B --> C{Elevado?}

@@ -1,8 +1,4 @@
-USE master;
-GO
-
-ALTER DATABASE uc606 SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-GO
+-- Active: 1730647917074@@127.0.0.1@3307
 DROP DATABASE IF EXISTS uc606;
 GO
 
@@ -19,7 +15,7 @@ go
 
 INSERT INTO tab_A (id, nome)
 VALUES
-(1, 'ANA'), (2, 'RICARDO'), (3, 'JO�O');
+(1, 'ANA'), (2, 'RICARDO'), (3, 'JOÃO');
 
 select * from tab_A;
 
@@ -68,3 +64,6 @@ order by len(nome) desc;
 
 select getdate() as hoje, 
 dateadd(month, 3, getdate()) as futura_consulta;
+
+-- as funções top e len não funcionam
+-- correm apenas no sql server manager studio

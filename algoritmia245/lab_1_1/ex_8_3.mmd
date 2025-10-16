@@ -1,3 +1,10 @@
+
+%% Considere agora que existe uma terceira estrada entre SF e CB: a estrada regional CC1. Esta
+%% estrada deve ser utilizada entre as 10h e as 12h, e entre as 14h e as 16h, e apenas quando o
+%% trânsito é 'Elevado'. Nestas condições, o trânsito é todo orientado por CC1. Fora deste horário,
+%% e quando o trânsito for elevado, o caminho continua a ser apenas por N1. NOTA: repare que, além do
+%% estado do trânsito, temos mais um parâmetro de entrada: a hora actual.
+
 flowchart
 A([Início]) --> B[/Ler Trânsito/]
 B --> C{Elevado?}

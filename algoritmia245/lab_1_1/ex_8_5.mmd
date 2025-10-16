@@ -1,0 +1,34 @@
+ %% Considere o processo de reparação de um candeeiro. Primeiro verificamos se o candeeiro dá luz
+ %% ou não. Se sim, o processo termina imediatamente (não há necessidade de reparar uma vez que
+ %% o candeeiro está a funcionar). Se não estiver, verifcamos se o candeeiro está ligado.
+ %% Se estiver ligado (*), então desligamos o candeeiro (para não apanharmos um choque...) e
+ %% passamos à verifcação do estado da lâmpada. Se não estiver ligado, ligamos o candeeiro,
+ %% verifcamos novamente se dá luz e em caso afrmativo, damos o processo por concluído. Se não
+ %% der luz, desligamos o candeeiro e também aqui seguimos para a verifcação do estado da
+ %% lâmpada.
+ %% A verifcação do estado da lâmpada consiste em verifcar se está fundida. Se estiver,
+ %% substituimos a lâmpada e em seguida damos o processo por terminado (não voltamos a testar
+ %% se dá luz ou não; fca para o próximo exercício...). Se não estiver, então procedemos à
+ %% reparação das restantes partes do candeeiro (considere uma operação genérica 'Reparar
+ %% restantes partes' ou algo do género), após o que o processo termina (também não voltamos a
+ %% testar se dá luz ou não...).
+ %% Para este exercício não necessita de incluir operações de E/S
+ %% (*) - Por exemplo, está ligado na fcha e o interruptor está também na posição 'on'. Mas não
+ %% necessita incluir estes detalhes no fuxograma, ou seja, considere apenas o teste 'Está ligado?'.
+
+ flowchart TD
+ A([Início]) --> B{Candeeiro dá luz?}
+ B -- Sim --> C([Fim])
+ B -- Não --> D{Candeeiro ligado?}
+ 
+ D -- Sim --> E[Desligar candeeiro]
+ D -- Não --> F[Ligar candeeiro]
+ F --> G{Candeeiro dá luz?}
+ G -- Sim --> C([Fim])
+ G -- Não --> I[Desligar candeeiro]
+ I --> K{Lâmpada fundida?}
+ K -- Sim --> L[Substituir lâmpada]
+ K -- Não --> M[Reparar candeeiro]
+ E --> K{Lâmpada fundida?}
+ L --> C([Fim])
+ M --> C([Fim])

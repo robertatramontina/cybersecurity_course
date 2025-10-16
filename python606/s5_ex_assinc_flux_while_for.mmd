@@ -1,0 +1,18 @@
+flowchart TD
+    A([Início]) --> B[Iniciar lista]
+    B --> C[Total falhas <- 0]
+    C --> D[/Ler alerta/]
+    D --> E{Alerta vazio?}
+    E -- Sim --> D
+    E -- Não --> F{alerta == sair?}
+    F -- Sim --> G[/Mostrar total de alertas registados/]
+    G --> H[/Mostar total de falhas 101/]
+    H --> K([Fim])
+    
+    F -- Não --> L[Adicionar alerta à lista]
+    L --> M[total_falhas <- 0]
+    M --> N[Iterar lista_alerta e normalizar cada alerta]
+    N --> O{i == 101 ou falha101?}
+    O -- Sim --> Q[Total falhas += 1] --> D
+    O -- Não --> D
+

@@ -1,0 +1,17 @@
+%% Soma de N números. Exemplo: 10, fazer depuração.
+%% N é o número de números que quero somar
+%% Num é o número que introduzimos que será somado às demais entradas
+
+
+flowchart TD
+    A([Início]) --> B[/Ler N/]
+    B --> C[Soma <-- 0]
+    C --> D[i <-- 0]
+
+    D --> E{i < N}
+    E -- Não --> F[/Exibir Soma/] --> G([Fim])
+    E -- Sim --> H[/Ler Num/]
+    H --> I[Soma += Num]
+    I --> J[i += 1] --> E
+
+   
