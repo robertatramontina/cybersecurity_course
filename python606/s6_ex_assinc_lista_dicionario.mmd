@@ -1,0 +1,23 @@
+flowchart TD
+
+A([Início]) --> B1[Lista de senhas <- vazia]
+B1 --> B2[contador senha <- 1]
+B2 --> B3[Dicionario senhas: fracas <- 0 e fortes <- 0 ]
+
+B3 --> C{Tamanho da lista senhas ≤ 4?}
+
+C -- Sim --> D[/Pedir senha ao utilizador/]
+D --> E[Adicionar senha à lista_senhas]
+E --> F[Contador senha += 1]
+F --> G{Comprimento da senha < 8?}
+
+G -- Sim --> H[/Escrever Senha Fraca/]
+H --> I[Contador de fracas += 1]
+I --> C
+
+G -- Não --> J[/Escrever Senha Forte/]
+J --> K[Contador de fortes += 1]
+K --> C
+
+C -- Não --> L[/Escrever totais de senhas fracas e fortes/]
+L --> M([Fim])

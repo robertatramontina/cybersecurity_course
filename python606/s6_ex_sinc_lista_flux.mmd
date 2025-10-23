@@ -1,0 +1,17 @@
+flowchart TD
+    A([Início]) --> B[Percorrer lista de IPs]
+    B --> C{IP começa por '10.'?}
+    C -- Sim --> D[Mostrar IP]
+    C -- Não --> B
+    D --> E[Verificar tentativas de utilizador]
+    E --> F{tentativas >= 3?}
+    F -- Sim --> G[Bloquear utilizador]
+    F -- Não --> H[Manter desbloqueado]
+    G --> I[Pesquisar 'falha' na mensagem]
+    H --> I
+    I --> J{Encontrada?}
+    J -- Sim --> K[Mostrar alerta]
+    J -- Não --> L[Sem falhas]
+    K --> M([Fim])
+    L --> M
+
