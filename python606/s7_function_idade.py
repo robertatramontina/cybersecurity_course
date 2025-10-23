@@ -7,3 +7,4 @@ def verificar_idade(idade):
 idade_utilizador = int(input("Indique sua idade: "))
 
 verificar_idade(idade_utilizador)
+ 
