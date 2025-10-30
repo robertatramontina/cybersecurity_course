@@ -1,4 +1,3 @@
-import time
 import getpass
 
 lista_senhas = []
@@ -7,7 +6,6 @@ dic_senhas = {
     "fracas": 0, 
     "fortes": 0
 }
-
 
 while len(lista_senhas) <= 4:
         senhas = getpass.getpass(f"Digite sua senha de número {count_senha}: ")
@@ -24,4 +22,8 @@ while len(lista_senhas) <= 4:
 
 #print(lista_senhas)        
 print(f"Foram registadas {dic_senhas['fracas']} senha(s) fraca(s) e {dic_senhas['fortes']} senha(s) fortes(s)")                           
-  
+
+###################################################  
+acesso = "tentativa de acesso do utilizador root"
+if "root" in acesso.lower():
+    print("Acesso root identificado")

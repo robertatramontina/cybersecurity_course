@@ -1,0 +1,35 @@
+flowchart TD
+
+A([Início]) --> B1[l_ips = vazia]
+B1 --> B2[l_black = 'ip', 'ip', 'ip']
+B2 --> B3[report_black = vazia]
+B3 --> B4[report_clear = vazia]
+
+B4 --> C[Função main]
+
+C --> D[Chamar obter_lista_ips]
+D --> E{Qtd de IPs ≤ 4?}
+E -- "Sim" --> F[Solicitar IP ao utilizador]
+F --> G{IP está vazio?}
+G -- "Sim" --> H[Mostrar 'IP não foi digitado'\nAguardar 1s e repetir]
+H --> E
+G -- 'Não' --> I[Validar formato com ipaddress.ip_address]
+I -->|Válido| J[Adicionar IP à lista l_ips]
+J --> E
+I -->|Inválido| K[Mostrar "IP inválido!"\nAguardar 1s e repetir]
+K --> E
+E -- "Não (5 IPs inseridos)" --> L[Retornar lista l_ips]
+
+L --> M[Chamar verificar_bloqueio(l_ips, l_black)]
+M --> N{Cada IP está em l_black?}
+N -- "Sim" --> O[Adicionar IP em report_black]
+N -- "Não" --> P[Adicionar IP em report_clear]
+N -->|Próximo IP| N
+N --> Q[Retornar listas de resultados]
+
+Q --> R[Chamar gerar_relatorio(report_black, report_clear)]
+R --> S{Listas estão vazias?}
+S -- "Sim (nenhum bloqueado)" --> T[report_black = msg padrão]
+S -- "Sim (nenhum autorizado)" --> U[report_clear = msg padrão]
+S --> V[Mostrar relatório no ecrã]
+V --> W([Fim])

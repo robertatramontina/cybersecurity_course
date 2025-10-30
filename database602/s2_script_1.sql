@@ -1,4 +1,7 @@
 -- Active: 1730647917074@@127.0.0.1@3307
+-- script corre completamente no SQL Server Manager
+-- comandos TOP and LEN não correm diretamente aqui
+
 DROP DATABASE IF EXISTS uc606;
 GO
 
